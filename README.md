@@ -143,4 +143,4 @@ Feel free to connect or raise an issue if you have questions or suggestions!
 
 
 
-This project is open-source and available under the [MIT License](LICENSE).
+
