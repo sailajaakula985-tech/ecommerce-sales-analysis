@@ -1,198 +1,129 @@
-# 🛒 E-Commerce Sales Performance Analysis
+ 🛒 E-Commerce Sales Performance Analysis
 
-A Python-based exploratory data analysis (EDA) project that uncovers revenue trends, customer behavior patterns, and actionable segments from e-commerce transaction data.
+A Python-based exploratory data analysis (EDA) project that digs into e-commerce sales data to uncover revenue trends, customer behavior, and actionable business insights.
 
 ---
 
-## 📌 Project Overview
+📋 Project Overview
 
 This project analyzes an e-commerce dataset to answer key business questions:
 
-- How does revenue trend over time (monthly)?
+- How does revenue trend month-over-month?
 - Which product categories drive the most sales?
-- How do customers behave across different devices?
-- Is there a relationship between delivery time and customer satisfaction?
-- Who are the most valuable customers, and who is at risk of churning?
+- Do spending patterns differ by gender or device type?
+- Is there a relationship between delivery time and customer ratings?
+- How can customers be segmented by purchase behavior?
 
 ---
 
-## 📂 Dataset
+📁 Dataset
 
 **File:** `E_Commerce.csv`
 
-**Key columns used:**
+The dataset contains **18 columns** covering order details, customer demographics, browsing behavior, and post-purchase feedback.
 
-| Column | Description |
-|---|---|
-| `Order_ID` | Unique identifier for each order |
-| `Customer_ID` | Unique identifier for each customer |
-| `Date` | Date the order was placed |
-| `Age` | Age of the customer |
-| `Gender` | Gender of the customer |
-| `City` | City where the customer is located |
-| `Product_Category` | Category of the purchased product |
-| `Unit_Price` | Price per unit of the product |
-| `Quantity` | Number of units purchased |
-| `Discount_Amount` | Discount applied to the order |
-| `Total_Amount` | Final revenue after discount |
-| `Payment_Method` | Method used to pay (e.g. card, UPI, COD) |
-| `Device_Type` | Device used to place the order (mobile, desktop, tablet) |
-| `Session_Duration_Minutes` | Time the customer spent on the platform (in minutes) |
-| `Pages_Viewed` | Number of pages viewed during the session |
-| `Is_Returning_Customer` | Whether the customer has ordered before (Yes/No) |
-| `Delivery_Time_Days` | Number of days taken to deliver the order |
-| `Customer_Rating` | Rating given by the customer after delivery (1–5) |
-
----
-
-## 🔍 Analysis Performed
-
-### 1. Monthly Revenue Trend
-Resampled order data by month to visualize how total revenue changes over time.
-
-### 2. Product Category Performance
-Grouped by `Product_Category` to compare total revenue and units sold — identifying best and worst performing categories.
-
-### 3. Average Spend by Gender
-Bar chart showing how average order value differs between male and female customers.
-
-### 4. Delivery Time vs. Customer Rating
-Correlation analysis to determine if longer delivery times negatively impact ratings.
-
-### 5. Device Type Behavior
-Compared average session duration and pages viewed across device types (mobile, tablet, desktop).
-
-### 6. Day-of-Week Sales Patterns
-Identified which days of the week generate the highest revenue.
-
-### 7. Correlation Heatmap
-Visualized correlations between all numeric features to uncover hidden relationships.
-
-### 8. RFM Customer Segmentation
-Segmented customers into three groups based on **Recency**, **Frequency**, and **Monetary** value:
-
-| Segment | Description |
-|---|---|
-| 🏆 Champions | High RFM score — most valuable customers |
-| 💛 Loyal Customers | Mid-range RFM — engaged but not top spenders |
-| ⚠️ At Risk | Low RFM score — inactive or low-value customers |
+| Column | Type | Description | Example |
+|---|---|---|---|
+| `Order_ID` | string | Unique identifier for each order | `ORD-00123` |
+| `Customer_ID` | string | Unique identifier for each customer | `CUST-4521` |
+| `Date` | date | Date the order was placed (DD/MM/YYYY) | `15/03/2024` |
+| `Age` | integer | Age of the customer in years | `34` |
+| `Gender` | categorical | Customer gender | `Male` / `Female` |
+| `City` | string | City where the order was placed | `Mumbai` |
+| `Product_Category` | categorical | Category of the purchased product | `Electronics`, `Clothing` |
+| `Unit_Price` | float | Price of a single unit of the product (₹) | `499.00` |
+| `Quantity` | integer | Number of units purchased in the order | `3` |
+| `Discount_Amount` | float | Discount applied on the order (₹) | `50.00` |
+| `Total_Amount` | float | Final revenue after discount (`Unit_Price × Quantity − Discount`) (₹) | `1447.00` |
+| `Payment_Method` | categorical | Mode of payment used | `UPI`, `Credit Card`, `COD` |
+| `Device_Type` | categorical | Device used to place the order | `Mobile`, `Desktop`, `Tablet` |
+| `Session_Duration_Minutes` | float | Time (in minutes) the customer spent on the platform | `12.5` |
+| `Pages_Viewed` | integer | Number of pages browsed during the session | `8` |
+| `Is_Returning_Customer` | boolean | Whether the customer has ordered before | `True` / `False` |
+| `Delivery_Time_Days` | integer | Number of days taken to deliver the order | `5` |
+| `Customer_Rating` | integer | Post-delivery rating given by the customer (1–5 scale) | `4` |
 
 ---
 
-## 🛠️ Tech Stack
+🔍 Analysis Performed
+
+1. Monthly Revenue Trends
+Time-series resampling to visualize how total revenue evolves month by month.
+
+ 2. Product Category Performance
+Grouped aggregation of revenue and quantity sold per category to identify top performers.
+
+ 3. Spending by Gender
+Bar chart comparing average order spend across genders.
+
+ 4. Delivery Time vs. Customer Rating
+Correlation analysis to assess whether faster delivery leads to higher ratings.
+
+ 5. Device Type Behavior
+Comparison of session duration and pages viewed across device types (mobile, desktop, etc.).
+
+ 6. Day-of-Week Sales Patterns
+Bar chart of total revenue by day to identify peak shopping days.
+
+ 7. RFM Customer Segmentation
+Customers are scored and segmented based on:
+- **Recency** – How recently they ordered
+- **Frequency** – How often they order
+- **Monetary** – How much they spend
+
+Segments: `Champions` | `Loyal Customers` | `At Risk`
+
+ 8. Correlation Heatmap
+Seaborn heatmap of all numerical features to surface hidden relationships.
+
+---
+
+ 🛠️ Tech Stack
 
 - **Python 3.x**
-- **pandas** — data manipulation
-- **matplotlib** — data visualization
-- **seaborn** — statistical plots
-- **datetime** — RFM recency calculation
+- **pandas** – Data manipulation and aggregation
+- **matplotlib** – Plotting and visualization
+- **seaborn** – Statistical visualizations
+- **datetime** – Date handling for RFM analysis
 
 ---
 
-## 🚀 Getting Started
+ 🚀 Getting Started
 
-### 1. Clone the repository
+ 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/ecommerce-sales-analysis.git
+git clone https://github.com/sailajaakula985-tech/ecommerce-sales-analysis.git
 cd ecommerce-sales-analysis
 ```
 
-### 2. Install dependencies
+2. Install dependencies
 ```bash
 pip install pandas matplotlib seaborn
 ```
 
-### 3. Add the dataset
+3. Add the dataset
 Place `E_Commerce.csv` in the project root directory (or update the file path in the notebook).
 
-### 4. Run the notebook
+ 4. Run the notebook
 ```bash
 jupyter notebook E_Commerce.ipynb
 ```
 
 ---
 
-## 📊 Sample Outputs
+ 📊 Sample Outputs
 
-### 📈 Total Monthly Revenue
-![Total Monthly Revenue](images/monthly_revenue.png)
-> Revenue ranged from ~1.6M (Jan 2023) to a peak of ~1.97M (Dec 2023), followed by a sharp drop in early 2024.
-
----
-
-### 🛍️ Product Category Performance
-![Product Category Performance](images/category_performance.png)
-> Electronics led with ₹12.8M in revenue; Books had the lowest at ₹433K.
+- Monthly revenue line chart
+- Category performance table (sorted by revenue)
+- RFM segmentation bar chart
+- Full correlation heatmap
 
 ---
 
-### 👤 Average Spend by Gender
-![Average Spend by Gender](images/avg_spend_gender.png)
-> The "Other" gender segment had the highest average spend (~₹1,380); Male and Female were close at ~₹1,200.
+💡 Key Insights (To Fill After Running)
+
+> Add your findings here after running the notebook — e.g., top revenue category, peak sales day, % of Champions vs At Risk customers.
 
 ---
 
-### 📅 Day-of-Week Sales
-![Day of Week Sales](images/day_of_week_sales.png)
-> Monday drove the most revenue (~₹4.0M); Thursday was the lowest (~₹3.55M).
-
----
-
-### 📱 Device Type Behavior
-![Device Type Behavior](images/device_behavior.png)
-> All devices showed nearly identical session durations (~14.5 min) and pages viewed (~9).
-
----
-
-### 🔥 Correlation Heatmap
-![Correlation Heatmap](images/correlation_heatmap.png)
-> Strong correlation between `Unit_Price` and `Total_Amount` (0.85); `Discount_Amount` moderately correlated (0.44).
-
----
-
-### 👥 Customer Segmentation Distribution
-![Customer Segmentation](images/customer_segmentation.png)
-> 2,469 Loyal Customers · 1,865 Champions · 666 At Risk
-
----
-
-## 💡 Key Insights
-
-- **Revenue peaked in December 2023** (~₹1.97M) and dropped sharply in early 2024 — likely a post-holiday effect worth investigating.
-- **Electronics dominates revenue** (₹12.8M) despite not having the highest quantity sold — it has the highest unit price impact.
-- **Delivery time does not affect customer ratings** (correlation: -0.009), suggesting satisfaction is driven by other factors like product quality or experience.
-- **Device type has no meaningful impact** on session behavior — all three devices show nearly identical engagement metrics.
-- **Monday drives the most revenue** (~₹4M); consider scheduling promotions or flash sales on Mondays to capitalize on this trend.
-- **666 at-risk customers** identified via RFM — a targeted re-engagement campaign could recover a significant portion of lost revenue.
-- **Unit price is the strongest driver of total order value** (correlation: 0.85), confirming that high-ticket items are the primary revenue engine.
-
----
-
-## 📁 Project Structure
-
-```
-ecommerce-sales-analysis/
-│
-├── E_Commerce.ipynb       # Main analysis notebook
-├── E_Commerce.csv         # Dataset (add manually)
-├── images/                # Output charts and visualizations
-│   ├── monthly_revenue.png
-│   ├── category_performance.png
-│   ├── avg_spend_gender.png
-│   ├── delivery_vs_rating.png
-│   ├── device_behavior.png
-│   ├── day_of_week_sales.png
-│   ├── correlation_heatmap.png
-│   └── customer_segmentation.png
-└── README.md              # Project documentation
-```
-
----
-
-## 🙋‍♀️ Author
-
-**Sailaja**  
-Feel free to connect or raise an issue if you have questions or suggestions!
-
----
-
+ 
