@@ -121,7 +121,9 @@ jupyter notebook E_Commerce.ipynb
 ---
 
 💡 Key Insights 
+
 📦 Overall Performance
+
 Total Orders: 22,049 across 5,000 unique customers
 Total Revenue: ₹26,694,597
 Average Order Value: ₹1,210.69
@@ -130,32 +132,38 @@ Average Delivery Time: 6.5 days
 
 
 📈 Revenue Trends
+
 Revenue grew steadily from ₹15.98L in January 2023 to a peak of ₹19.71L in December 2023
 A slight dip is observed in early 2024 (Jan–Mar), likely seasonal
 Monday is the highest revenue day (₹40.24L total), while Thursday is the lowest (₹35.64L)
 
 
 🛍️ Product Categories
+
 Electronics is the dominant category, contributing ₹1.28Cr — nearly 48% of total revenue
 Home & Garden (₹49.3L) and Sports (₹39.6L) follow as the next top earners
 Books (₹4.33L) and Food (₹5.18L) are the lowest revenue categories
 
 
 👤 Customer Demographics
+
 Customers identifying as Other gender have the highest average spend (₹1,376.54), followed by Female (₹1,216.75) and Male (₹1,199.15)
 Istanbul is the top city by revenue (₹69.8L), followed by Ankara (₹37.1L) and Izmir (₹32.2L)
 
 
 💳 Payment & Device Behavior
+
 Credit Card is the most preferred payment method (40% of orders), followed by Debit Card (25%)
 Cash on Delivery is the least used (5%)
 All device types (Mobile, Desktop, Tablet) show nearly identical session durations (~14.5 min) and pages viewed (~9), suggesting a consistent user experience across platforms
 
 
 🚚 Delivery & Satisfaction
+
 Correlation between delivery time and customer rating is nearly 0 (-0.009) — delivery speed alone does not significantly impact ratings
 
 🔄 Customer Loyalty
+
 81.8% of orders are from returning customers, indicating strong retention
 RFM Segmentation breakdown:
 🏆 Champions — 1,865 customers (37.3%)
